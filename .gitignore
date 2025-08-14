@@ -47,3 +47,6 @@ claude-flow-data.json
 .cache
 .temp
 .tmp
+
+# Local Netlify folder
+.netlify
