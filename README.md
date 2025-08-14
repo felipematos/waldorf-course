@@ -2,6 +2,9 @@
 
 Um curso interativo e completo sobre Antroposofia e Pedagogia Waldorf, desenvolvido especialmente para pais de alunos de escolas Waldorf.
 
+🌐 **Live Demo**: [https://superlative-belekoy-fbd614.netlify.app](https://superlative-belekoy-fbd614.netlify.app)
+📦 **GitHub Repository**: [https://github.com/felipematos/waldorf-course](https://github.com/felipematos/waldorf-course)
+
 ## ✨ Características
 
 - 📚 **7 Capítulos Completos** sobre os fundamentos da Antroposofia e Pedagogia Waldorf
