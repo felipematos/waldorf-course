@@ -1,0 +1,253 @@
+// Cores inspiradas na paleta Waldorf
+$cor-ceu: #a8c5e0;
+$cor-sol: #f4d03f;
+$cor-terra: #8b6f47;
+$cor-folha: #7cb342;
+$cor-rosa: #e8a5a5;
+$cor-violeta: #9c7bb8;
+$cor-laranja: #ff9c5a;
+$cor-vermelho: #d85959;
+$cor-azul-profundo: #4a6fa5;
+$cor-creme: #fef5e7;
+$cor-marfim: #fdf9f3;
+$cor-madeira: #6b5c4d;
+
+// Reset e configurações base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Gentium Book Plus', 'Noto Serif', serif;
+  background: linear-gradient(180deg, $cor-marfim 0%, $cor-creme 100%);
+  color: #3a3a3a;
+  line-height: 1.7;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba($cor-rosa, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba($cor-ceu, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba($cor-sol, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+// Tipografia
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #2a2a2a;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 2rem 0;
+  background: linear-gradient(135deg, $cor-violeta, $cor-azul-profundo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 2rem;
+  color: $cor-azul-profundo;
+  margin: 1.5rem 0;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, $cor-sol, transparent);
+  }
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: $cor-terra;
+  margin: 1.2rem 0;
+}
+
+p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+// Container principal
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Animações suaves
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentleGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba($cor-sol, 0.2); }
+  50% { box-shadow: 0 0 30px rgba($cor-sol, 0.4); }
+}
+
+// Classes utilitárias
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.gentle-glow {
+  animation: gentleGlow 3s ease-in-out infinite;
+}
+
+// Scrollbar customizada
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: $cor-creme;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, $cor-ceu, $cor-violeta);
+  border-radius: 6px;
+  
+  &:hover {
+    background: linear-gradient(180deg, darken($cor-ceu, 10%), darken($cor-violeta, 10%));
+  }
+}
+
+// Seleção de texto
+::selection {
+  background: rgba($cor-rosa, 0.3);
+  color: $cor-azul-profundo;
+}
+
+// Botões com estética Waldorf
+.btn-waldorf {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, $cor-rosa, $cor-laranja);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba($cor-laranja, 0.3);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($cor-laranja, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Cards com bordas aquareladas
+.card-waldorf {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      $cor-rosa, $cor-ceu, $cor-sol, $cor-folha, $cor-violeta);
+    border-radius: 20px;
+    opacity: 0.3;
+    z-index: -1;
+    filter: blur(10px);
+  }
+}
+
+// Citações e poemas
+.quote-waldorf {
+  position: relative;
+  padding: 2rem 3rem;
+  margin: 2rem 0;
+  font-style: italic;
+  text-align: center;
+  color: $cor-azul-profundo;
+  
+  &::before,
+  &::after {
+    content: '"';
+    position: absolute;
+    font-size: 4rem;
+    opacity: 0.2;
+    font-family: 'Gentium Book Plus', serif;
+  }
+  
+  &::before {
+    top: -10px;
+    left: 10px;
+  }
+  
+  &::after {
+    bottom: -30px;
+    right: 10px;
+  }
+  
+  .author {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: $cor-terra;
+    font-style: normal;
+    
+    &::before {
+      content: '— ';
+    }
+  }
+}

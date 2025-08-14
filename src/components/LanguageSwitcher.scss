@@ -1,0 +1,142 @@
+.language-switcher {
+  position: relative;
+  z-index: 100;
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__flag {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  &__name {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__chevron {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 180px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 8px;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #f7f7f7;
+    }
+
+    &--active {
+      background: #f0f0f0;
+      color: #6B46C1;
+    }
+
+    &-flag {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    &-name {
+      flex: 1;
+    }
+
+    &-indicator {
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 24px;
+      background: #6B46C1;
+      border-radius: 2px;
+    }
+  }
+}
+
+.navigation {
+  .language-switcher {
+    &__trigger {
+      background: rgba(255, 255, 255, 0.05);
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+}
+
+.navigation--scrolled {
+  .language-switcher {
+    &__trigger {
+      background: rgba(107, 70, 193, 0.1);
+      color: #6B46C1;
+      border-color: rgba(107, 70, 193, 0.2);
+
+      &:hover {
+        background: rgba(107, 70, 193, 0.15);
+        border-color: rgba(107, 70, 193, 0.3);
+      }
+    }
+  }
+}

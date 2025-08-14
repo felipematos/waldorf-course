@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waldorf Tone Generator - Pentatonic Music</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%);
+            color: #5a4a3a;
+        }
+        h1 {
+            text-align: center;
+            color: #8b6914;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7a6a5a;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .controls {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .instrument-select {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .instrument-btn {
+            padding: 12px;
+            border: 2px solid #d4a574;
+            background: #fff9f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 14px;
+            color: #5a4a3a;
+        }
+        .instrument-btn:hover {
+            background: #f5e6d3;
+            transform: translateY(-2px);
+        }
+        .instrument-btn.active {
+            background: #d4a574;
+            color: white;
+        }
+        .pentatonic-keys {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .key {
+            width: 80px;
+            height: 120px;
+            background: linear-gradient(to bottom, #fff, #f5f5f5);
+            border: 2px solid #d4a574;
+            border-radius: 0 0 10px 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
+            font-weight: bold;
+            color: #8b6914;
+            transition: all 0.1s;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .key:hover {
+            background: linear-gradient(to bottom, #f5e6d3, #e8d5c4);
+        }
+        .key:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .playing {
+            background: linear-gradient(to bottom, #ffd700, #ffed4e) !important;
+        }
+        .melody-player {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .melody-btn {
+            padding: 12px 24px;
+            background: #8b6914;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .melody-btn:hover {
+            background: #a57c1e;
+            transform: translateY(-2px);
+        }
+        .info {
+            background: #fff9f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #d4a574;
+        }
+        .volume-control {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .volume-control input {
+            flex: 1;
+        }
+        .record-btn {
+            padding: 10px 20px;
+            background: #c41e3a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .record-btn.recording {
+            background: #ff0000;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 Waldorf Tone Generator</h1>
+    <p class="subtitle">Criando música pentatônica suave para educação Waldorf</p>
+    
+    <div class="controls">
+        <h3>Selecione o Timbre (Instrumento Simulado):</h3>
+        <div class="instrument-select">
+            <button class="instrument-btn active" data-instrument="sine">Flauta Suave</button>
+            <button class="instrument-btn" data-instrument="triangle">Lira Delicada</button>
+            <button class="instrument-btn" data-instrument="soft-square">Violino Suave</button>
+            <button class="instrument-btn" data-instrument="bells">Sinos Tibetanos</button>
+            <button class="instrument-btn" data-instrument="harp">Harpa Céltica</button>
+        </div>
+        
+        <div class="volume-control">
+            <label>Volume:</label>
+            <input type="range" id="volume" min="0" max="100" value="30">
+            <span id="volume-value">30%</span>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <h3>Escala Pentatônica (Dó Maior):</h3>
+        <div class="pentatonic-keys">
+            <div class="key" data-note="C4" data-freq="261.63">Dó</div>
+            <div class="key" data-note="D4" data-freq="293.66">Ré</div>
+            <div class="key" data-note="E4" data-freq="329.63">Mi</div>
+            <div class="key" data-note="G4" data-freq="392.00">Sol</div>
+            <div class="key" data-note="A4" data-freq="440.00">Lá</div>
+            <div class="key" data-note="C5" data-freq="523.25">Dó↑</div>
+        </div>
+        
+        <div class="melody-player">
+            <button class="melody-btn" onclick="playMelody('lullaby')">🌙 Canção de Ninar</button>
+            <button class="melody-btn" onclick="playMelody('morning')">🌅 Manhã Suave</button>
+            <button class="melody-btn" onclick="playMelody('rain')">🌧️ Chuva Gentil</button>
+            <button class="melody-btn" onclick="stopMelody()">⏹️ Parar</button>
+        </div>
+        
+        <div class="melody-player">
+            <button class="record-btn" id="recordBtn" onclick="toggleRecording()">🔴 Gravar Melodia</button>
+            <button class="melody-btn" onclick="playRecording()">▶️ Tocar Gravação</button>
+            <button class="melody-btn" onclick="downloadRecording()">💾 Baixar Gravação</button>
+        </div>
+    </div>
+    
+    <div class="info">
+        <h3>Sobre a Música Waldorf:</h3>
+        <p>A pedagogia Waldorf enfatiza o uso da <strong>escala pentatônica</strong> (5 notas) especialmente para crianças pequenas, pois:</p>
+        <ul>
+            <li>Não possui semitons, criando uma atmosfera de sonho e paz</li>
+            <li>Permite improvisação livre sem dissonâncias</li>
+            <li>Conecta a criança com qualidades arquetípicas da música</li>
+            <li>Instrumentos preferidos: lira, flauta doce, harpa pequena</li>
+        </ul>
+        <p><em>Use este gerador para criar melodias suaves apropriadas para o ambiente Waldorf.</em></p>
+    </div>
+    
+    <script>
+        let audioContext;
+        let currentInstrument = 'sine';
+        let isRecording = false;
+        let recordedNotes = [];
+        let recordingStartTime = 0;
+        let melodyInterval = null;
+        
+        // Initialize audio context on first user interaction
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+        
+        // Create instrument-specific waveforms and envelopes
+        function createInstrumentSound(frequency, startTime, duration) {
+            if (!audioContext) {
+                initAudio();
+            }
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            const volume = document.getElementById('volume').value / 100;
+            
+            // Configure oscillator based on instrument
+            switch(currentInstrument) {
+                case 'sine':
+                    // Flute-like
+                    oscillator.type = 'sine';
+                    gainNode.gain.setValueAtTime(0, startTime);
+                    gainNode.gain.linearRampToValueAtTime(volume * 0.3, startTime + 0.05);
+                    gainNode.gain.exponentialRampToValueAtTime(volume * 0.2, startTime + duration * 0.3);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+                    break;
+                    
+                case 'triangle':
+                    // Lyre-like
+                    oscillator.type = 'triangle';
+                    gainNode.gain.setValueAtTime(0, startTime);
+                    gainNode.gain.linearRampToValueAtTime(volume * 0.25, startTime + 0.02);
+                    gainNode.gain.exponentialRampToValueAtTime(volume * 0.15, startTime + duration * 0.5);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+                    break;
+                    
+                case 'soft-square':
+                    // Soft violin-like
+                    oscillator.type = 'sawtooth';
+                    // Add low-pass filter for softer sound
+                    const filter = audioContext.createBiquadFilter();
+                    filter.type = 'lowpass';
+                    filter.frequency.value = 1000;
+                    oscillator.connect(filter);
+                    filter.connect(gainNode);
+                    
+                    gainNode.gain.setValueAtTime(0, startTime);
+                    gainNode.gain.linearRampToValueAtTime(volume * 0.2, startTime + 0.1);
+                    gainNode.gain.linearRampToValueAtTime(volume * 0.18, startTime + duration * 0.5);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+                    break;
+                    
+                case 'bells':
+                    // Bell-like with overtones
+                    oscillator.type = 'sine';
+                    const oscillator2 = audioContext.createOscillator();
+                    oscillator2.type = 'sine';
+                    oscillator2.frequency.value = frequency * 2.4; // Overtone
+                    
+                    const gainNode2 = audioContext.createGain();
+                    gainNode2.gain.setValueAtTime(0, startTime);
+                    gainNode2.gain.linearRampToValueAtTime(volume * 0.1, startTime + 0.01);
+                    gainNode2.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+                    
+                    oscillator2.connect(gainNode2);
+                    gainNode2.connect(audioContext.destination);
+                    oscillator2.start(startTime);
+                    oscillator2.stop(startTime + duration);
+                    
+                    gainNode.gain.setValueAtTime(0, startTime);
+                    gainNode.gain.linearRampToValueAtTime(volume * 0.3, startTime + 0.01);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+                    break;
+                    
+                case 'harp':
+                    // Harp-like plucked string
+                    oscillator.type = 'triangle';
+                    const filter2 = audioContext.createBiquadFilter();
+                    filter2.type = 'highpass';
+                    filter2.frequency.value = 200;
+                    oscillator.connect(filter2);
+                    filter2.connect(gainNode);
+                    
+                    gainNode.gain.setValueAtTime(volume * 0.4, startTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + duration);
+                    break;
+            }
+            
+            oscillator.frequency.setValueAtTime(frequency, startTime);
+            
+            if (currentInstrument !== 'soft-square' && currentInstrument !== 'harp') {
+                oscillator.connect(gainNode);
+            }
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.start(startTime);
+            oscillator.stop(startTime + duration);
+        }
+        
+        // Play a single note
+        function playNote(frequency, duration = 1.5) {
+            initAudio(); // Ensure audio context is initialized
+            createInstrumentSound(frequency, audioContext.currentTime, duration);
+            
+            if (isRecording) {
+                recordedNotes.push({
+                    frequency: frequency,
+                    time: Date.now() - recordingStartTime,
+                    duration: duration
+                });
+            }
+        }
+        
+        // Predefined melodies
+        const melodies = {
+            lullaby: [
+                {freq: 329.63, dur: 0.5, delay: 0},
+                {freq: 293.66, dur: 0.5, delay: 500},
+                {freq: 261.63, dur: 1, delay: 1000},
+                {freq: 293.66, dur: 0.5, delay: 2000},
+                {freq: 329.63, dur: 0.5, delay: 2500},
+                {freq: 392.00, dur: 1, delay: 3000},
+                {freq: 329.63, dur: 1.5, delay: 4000}
+            ],
+            morning: [
+                {freq: 261.63, dur: 0.3, delay: 0},
+                {freq: 293.66, dur: 0.3, delay: 300},
+                {freq: 329.63, dur: 0.3, delay: 600},
+                {freq: 392.00, dur: 0.5, delay: 900},
+                {freq: 440.00, dur: 0.5, delay: 1400},
+                {freq: 523.25, dur: 1, delay: 1900},
+                {freq: 440.00, dur: 0.5, delay: 2900},
+                {freq: 392.00, dur: 0.5, delay: 3400},
+                {freq: 329.63, dur: 1, delay: 3900}
+            ],
+            rain: [
+                {freq: 440.00, dur: 0.2, delay: 0},
+                {freq: 392.00, dur: 0.2, delay: 200},
+                {freq: 329.63, dur: 0.2, delay: 400},
+                {freq: 293.66, dur: 0.2, delay: 600},
+                {freq: 261.63, dur: 0.4, delay: 800},
+                {freq: 293.66, dur: 0.2, delay: 1200},
+                {freq: 329.63, dur: 0.2, delay: 1400},
+                {freq: 392.00, dur: 0.2, delay: 1600},
+                {freq: 440.00, dur: 0.4, delay: 1800}
+            ]
+        };
+        
+        function playMelody(melodyName) {
+            stopMelody();
+            const melody = melodies[melodyName];
+            melody.forEach(note => {
+                setTimeout(() => {
+                    playNote(note.freq, note.dur);
+                }, note.delay);
+            });
+        }
+        
+        function stopMelody() {
+            if (melodyInterval) {
+                clearInterval(melodyInterval);
+                melodyInterval = null;
+            }
+        }
+        
+        function toggleRecording() {
+            const btn = document.getElementById('recordBtn');
+            if (!isRecording) {
+                recordedNotes = [];
+                recordingStartTime = Date.now();
+                isRecording = true;
+                btn.classList.add('recording');
+                btn.textContent = '⏹️ Parar Gravação';
+            } else {
+                isRecording = false;
+                btn.classList.remove('recording');
+                btn.textContent = '🔴 Gravar Melodia';
+                console.log('Recorded', recordedNotes.length, 'notes');
+            }
+        }
+        
+        function playRecording() {
+            if (recordedNotes.length === 0) {
+                alert('Nenhuma gravação disponível. Grave uma melodia primeiro!');
+                return;
+            }
+            
+            recordedNotes.forEach(note => {
+                setTimeout(() => {
+                    playNote(note.frequency, note.duration);
+                }, note.time);
+            });
+        }
+        
+        function downloadRecording() {
+            if (recordedNotes.length === 0) {
+                alert('Nenhuma gravação disponível. Grave uma melodia primeiro!');
+                return;
+            }
+            
+            const data = JSON.stringify(recordedNotes, null, 2);
+            const blob = new Blob([data], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'waldorf-melody.json';
+            a.click();
+        }
+        
+        // Event listeners
+        document.querySelectorAll('.instrument-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.instrument-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentInstrument = this.dataset.instrument;
+            });
+        });
+        
+        document.querySelectorAll('.key').forEach(key => {
+            key.addEventListener('click', function() {
+                const freq = parseFloat(this.dataset.freq);
+                playNote(freq);
+                
+                this.classList.add('playing');
+                setTimeout(() => {
+                    this.classList.remove('playing');
+                }, 200);
+            });
+        });
+        
+        document.getElementById('volume').addEventListener('input', function() {
+            document.getElementById('volume-value').textContent = this.value + '%';
+        });
+        
+        // Keyboard support
+        const keyMap = {
+            'a': 261.63, // C
+            's': 293.66, // D
+            'd': 329.63, // E
+            'f': 392.00, // G
+            'g': 440.00, // A
+            'h': 523.25  // C5
+        };
+        
+        document.addEventListener('keydown', function(e) {
+            if (keyMap[e.key]) {
+                playNote(keyMap[e.key]);
+                document.querySelector(`[data-freq="${keyMap[e.key]}"]`).classList.add('playing');
+            }
+        });
+        
+        document.addEventListener('keyup', function(e) {
+            if (keyMap[e.key]) {
+                document.querySelector(`[data-freq="${keyMap[e.key]}"]`).classList.remove('playing');
+            }
+        });
+    </script>
+</body>
+</html>

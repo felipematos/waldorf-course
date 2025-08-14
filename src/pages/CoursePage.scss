@@ -1,0 +1,445 @@
+@import '../styles/global.scss';
+
+.course-page {
+  min-height: calc(100vh - 70px);
+  padding: 2rem 0 120px 0;  // Added bottom padding to avoid fixed buttons overlap
+}
+
+// Introduction
+.course-introduction {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  .intro-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .intro-icon {
+      width: 60px;
+      height: 60px;
+      color: $cor-sol;
+      margin-bottom: 1rem;
+      animation: gentleGlow 3s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .intro-quote {
+    max-width: 700px;
+    margin: 2rem auto 3rem;
+  }
+
+  .intro-content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+// Chapters Grid
+.chapters-grid {
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .chapters-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .chapter-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid transparent;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      border-color: $cor-ceu;
+    }
+
+    &.completed {
+      background: linear-gradient(135deg, rgba($cor-folha, 0.1), rgba($cor-ceu, 0.1));
+      border-color: $cor-folha;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+
+      .chapter-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background: linear-gradient(135deg, $cor-violeta, $cor-azul-profundo);
+        color: white;
+        border-radius: 50%;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      h3 {
+        flex: 1;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: $cor-azul-profundo;
+        margin: 0;
+      }
+
+      .check-icon {
+        color: $cor-folha;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .chapter-subtitle {
+      color: #666;
+      font-size: 0.9rem;
+      margin-left: 3rem;
+      font-style: italic;
+    }
+  }
+}
+
+// Chapter Content
+.chapter-content {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .chapter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .back-button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: none;
+      color: $cor-azul-profundo;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba($cor-ceu, 0.1);
+        transform: translateX(-5px);
+      }
+    }
+
+    .progress-indicator {
+      background: rgba($cor-violeta, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      color: $cor-violeta;
+      font-size: 0.9rem;
+    }
+  }
+
+  .chapter-title-section {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .chapter-subtitle {
+      color: $cor-terra;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
+
+  .chapter-poem {
+    max-width: 700px;
+    margin: 2rem auto 3rem;
+    background: linear-gradient(135deg, rgba($cor-rosa, 0.05), rgba($cor-ceu, 0.05));
+  }
+}
+
+// Section Content
+.section-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  h2 {
+    color: $cor-azul-profundo;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba($cor-ceu, 0.2);
+  }
+
+  .section-text {
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    ul {
+      margin: 1rem 0 1.5rem 2rem;
+      
+      li {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+        position: relative;
+        
+        &::before {
+          content: '❀';
+          position: absolute;
+          left: -1.5rem;
+          color: $cor-laranja;
+        }
+      }
+    }
+
+    strong {
+      color: $cor-violeta;
+      font-weight: 500;
+    }
+  }
+}
+
+// Exercise Box
+.exercise-box {
+  background: linear-gradient(135deg, rgba($cor-sol, 0.1), rgba($cor-laranja, 0.1));
+  border-left: 4px solid $cor-sol;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+
+  h3 {
+    color: $cor-terra;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: '✎';
+      font-size: 1.5rem;
+      color: $cor-laranja;
+    }
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+  }
+}
+
+// Practices Box
+.practices-box {
+  background: linear-gradient(135deg, rgba($cor-folha, 0.1), rgba($cor-ceu, 0.1));
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+
+  h3 {
+    color: $cor-folha;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+
+      &::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: $cor-folha;
+      }
+    }
+  }
+}
+
+// Navigation Buttons
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0 6rem 0;  // Added extra bottom margin to avoid overlap
+  gap: 1rem;
+  position: relative;
+  z-index: 10;  // Ensure buttons stay above content
+
+  .nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, $cor-ceu, $cor-violeta);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba($cor-violeta, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &.prev {
+      background: linear-gradient(135deg, $cor-terra, $cor-laranja);
+    }
+  }
+
+  .complete-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, $cor-folha, $cor-ceu);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+
+    &:hover:not(:disabled) {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba($cor-folha, 0.4);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: default;
+    }
+  }
+}
+
+// Activities Section
+.activities-section {
+  background: rgba($cor-rosa, 0.05);
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+
+  h3 {
+    color: $cor-azul-profundo;
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 0.75rem 0;
+      padding-left: 2rem;
+      position: relative;
+      border-bottom: 1px solid rgba($cor-rosa, 0.2);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &::before {
+        content: '🌟';
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+}
+
+// Final Reflection
+.final-reflection {
+  background: linear-gradient(135deg, rgba($cor-violeta, 0.05), rgba($cor-ceu, 0.05));
+  padding: 3rem;
+  border-radius: 20px;
+  margin: 3rem 0;
+  text-align: center;
+
+  h2 {
+    color: $cor-violeta;
+    margin-bottom: 2rem;
+  }
+
+  .reflection-content {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+  }
+
+  .quote-waldorf {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .chapters-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  .navigation-buttons {
+    flex-wrap: wrap;
+
+    .nav-btn,
+    .complete-btn {
+      flex: 1;
+      min-width: 120px;
+    }
+  }
+
+  .section-content {
+    padding: 1.5rem;
+  }
+}

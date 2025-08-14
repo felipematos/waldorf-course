@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "Home",
+    "course": "Course",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Anthroposophy and Waldorf Education",
+      "subtitle": "A journey of discovery for parents and educators",
+      "description": "Discover the foundations of education that nurtures body, soul, and spirit, preparing children to become free, creative, and responsible human beings.",
+      "startButton": "Start Journey",
+      "learnMore": "Learn More"
+    },
+    "features": {
+      "title": "What you will learn",
+      "items": {
+        "anthroposophy": {
+          "title": "Foundations of Anthroposophy",
+          "description": "Understand the vision of the human being that underlies Waldorf pedagogy"
+        },
+        "development": {
+          "title": "Child Development",
+          "description": "The seven-year cycles and phases of child development"
+        },
+        "practical": {
+          "title": "Daily Practices",
+          "description": "How to create a Waldorf environment at home"
+        },
+        "community": {
+          "title": "Community Life",
+          "description": "The importance of the school community"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to begin?",
+      "description": "Embark on this journey of knowledge and transformation",
+      "button": "Access the Course"
+    }
+  },
+  "course": {
+    "welcome": {
+      "title": "Welcome to the Anthroposophical Journey",
+      "poem": "The human being is a seeker.\nSeeking oneself,\nSeeking the world,\nSeeking the spirit.\nAnd in this threefold search,\nFinds the path of true education.",
+      "author": "Rudolf Steiner",
+      "content": {
+        "greeting": "Dear parents,",
+        "paragraph1": "This course was created with love and dedication for you who have chosen Waldorf Education for your children. Like a seed germinating in fertile soil, Waldorf education nurtures not only the intellect but also the heart and hands of our children.",
+        "paragraph2": "Here, we will explore together the foundations of Anthroposophy, the spiritual science developed by Rudolf Steiner, which serves as the philosophical basis for the pedagogy that has been transforming lives for over 100 years."
+      },
+      "startButton": "Start the Course",
+      "continueButton": "Continue where you left off"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next",
+      "backToChapters": "Back to Chapters",
+      "complete": "Mark as Complete"
+    },
+    "chapters": {
+      "title": "Chapters",
+      "chapter1": {
+        "title": "Goethean Observation and Archetypes",
+        "subtitle": "Learning to See with the Heart"
+      },
+      "chapter2": {
+        "title": "From One to Many - Cosmic Evolution",
+        "subtitle": "The Dance of Numbers in Creation"
+      },
+      "chapter3": {
+        "title": "The Seven-Year Cycles - Human Biography",
+        "subtitle": "The Developmental Cycles of the Human Being"
+      },
+      "chapter4": {
+        "title": "The Four Bodies of the Human Being",
+        "subtitle": "The Fourfold Constitution"
+      },
+      "chapter5": {
+        "title": "Spirituality in Anthroposophy",
+        "subtitle": "The Path of Spiritual Knowledge"
+      },
+      "chapter6": {
+        "title": "The School as a Living Being",
+        "subtitle": "The Biography of the School Community"
+      },
+      "chapter7": {
+        "title": "Best Practices for Waldorf Parents",
+        "subtitle": "Cultivating the Waldorf Home"
+      }
+    },
+    "exercises": {
+      "title": "Exercise",
+      "description": "Exercise description"
+    },
+    "activities": {
+      "title": "Practical Activities"
+    },
+    "practices": {
+      "title": "Recommended Practices"
+    },
+    "reflection": {
+      "title": "Final Reflection"
+    },
+    "resources": {
+      "title": "Resources for Further Study",
+      "books": "Essential Books",
+      "groups": "Study Groups",
+      "activities": "Practical Activities"
+    }
+  },
+  "progress": {
+    "title": "Your Progress",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "notStarted": "Not Started",
+    "chapter": "Chapter",
+    "of": "of"
+  },
+  "chat": {
+    "title": "Course Assistant",
+    "placeholder": "Type your question...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "error": "Sorry, an error occurred. Please try again.",
+    "welcome": "Hello! I'm your assistant for the Anthroposophy and Waldorf Education course. How can I help you?"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close",
+    "language": "Language",
+    "selectLanguage": "Select Language"
+  }
+}

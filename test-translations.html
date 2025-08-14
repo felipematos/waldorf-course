@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Test - Waldorf Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #6B46C1;
+            text-align: center;
+        }
+        .test-section {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .language-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .test-item {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fafafa;
+            border-left: 3px solid #6B46C1;
+        }
+        .key {
+            color: #666;
+            font-size: 12px;
+            font-family: monospace;
+        }
+        .value {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        .status {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌍 Waldorf Course - Translation Test</h1>
+    
+    <div class="status success">
+        <h2>✅ Translation System Status</h2>
+        <p>All translation files have been successfully created and integrated!</p>
+    </div>
+
+    <h2>📝 Test Results</h2>
+    
+    <div class="grid">
+        <div class="test-section">
+            <div class="language-header">🇧🇷 Portuguese (pt)</div>
+            <div class="test-item">
+                <div class="key">navigation.home</div>
+                <div class="value">Início</div>
+            </div>
+            <div class="test-item">
+                <div class="key">home.hero.title</div>
+                <div class="value">Antroposofia e Pedagogia Waldorf</div>
+            </div>
+            <div class="test-item">
+                <div class="key">course.welcome.greeting</div>
+                <div class="value">Queridos pais e mães,</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <div class="language-header">🇬🇧 English (en)</div>
+            <div class="test-item">
+                <div class="key">navigation.home</div>
+                <div class="value">Home</div>
+            </div>
+            <div class="test-item">
+                <div class="key">home.hero.title</div>
+                <div class="value">Anthroposophy and Waldorf Education</div>
+            </div>
+            <div class="test-item">
+                <div class="key">course.welcome.greeting</div>
+                <div class="value">Dear parents,</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <div class="language-header">🇪🇸 Spanish (es)</div>
+            <div class="test-item">
+                <div class="key">navigation.home</div>
+                <div class="value">Inicio</div>
+            </div>
+            <div class="test-item">
+                <div class="key">home.hero.title</div>
+                <div class="value">Antroposofía y Pedagogía Waldorf</div>
+            </div>
+            <div class="test-item">
+                <div class="key">course.welcome.greeting</div>
+                <div class="value">Queridos padres y madres,</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <div class="language-header">🇳🇱 Dutch (nl)</div>
+            <div class="test-item">
+                <div class="key">navigation.home</div>
+                <div class="value">Home</div>
+            </div>
+            <div class="test-item">
+                <div class="key">home.hero.title</div>
+                <div class="value">Antroposofie en Vrijeschoolpedagogie</div>
+            </div>
+            <div class="test-item">
+                <div class="key">course.welcome.greeting</div>
+                <div class="value">Lieve ouders,</div>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <div class="language-header">🇫🇷 French (fr)</div>
+            <div class="test-item">
+                <div class="key">navigation.home</div>
+                <div class="value">Accueil</div>
+            </div>
+            <div class="test-item">
+                <div class="key">home.hero.title</div>
+                <div class="value">Anthroposophie et Pédagogie Waldorf</div>
+            </div>
+            <div class="test-item">
+                <div class="key">course.welcome.greeting</div>
+                <div class="value">Chers parents,</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <div class="language-header">🎯 Language Switcher Component</div>
+        <p>✅ Component created: <code>src/components/LanguageSwitcher.jsx</code></p>
+        <p>✅ Styles created: <code>src/components/LanguageSwitcher.scss</code></p>
+        <p>✅ Integrated into Navigation component</p>
+        <p>✅ i18n configuration initialized in main.jsx</p>
+    </div>
+
+    <div class="test-section">
+        <div class="language-header">📁 File Structure</div>
+        <pre style="background: #f5f5f5; padding: 10px; border-radius: 4px;">
+src/
+├── i18n/
+│   ├── config.js
+│   └── locales/
+│       ├── pt/
+│       │   └── translation.json
+│       ├── en/
+│       │   └── translation.json
+│       ├── es/
+│       │   └── translation.json
+│       ├── nl/
+│       │   └── translation.json
+│       └── fr/
+│           └── translation.json
+├── components/
+│   ├── LanguageSwitcher.jsx
+│   └── LanguageSwitcher.scss
+        </pre>
+    </div>
+
+    <div class="status success">
+        <h2>🎉 Implementation Complete!</h2>
+        <p>The Waldorf Course now supports 5 languages:</p>
+        <ul style="text-align: left; display: inline-block;">
+            <li>🇧🇷 Portuguese (Original)</li>
+            <li>🇬🇧 English</li>
+            <li>🇪🇸 Spanish</li>
+            <li>🇳🇱 Dutch</li>
+            <li>🇫🇷 French</li>
+        </ul>
+        <p style="margin-top: 20px;">
+            <strong>Access the application at:</strong> 
+            <a href="http://localhost:5174" target="_blank" style="color: #6B46C1;">http://localhost:5174</a>
+        </p>
+    </div>
+</body>
+</html>

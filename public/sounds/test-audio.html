@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Áudio - Waldorf Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .audio-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .audio-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .status.ok {
+            background: #10b981;
+        }
+        .status.error {
+            background: #ef4444;
+        }
+        .test-button {
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .test-button:hover {
+            background: #7c3aed;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 Teste de Arquivos de Áudio - Waldorf Course</h1>
+    
+    <div class="audio-grid">
+        <div class="audio-card">
+            <h3>Home <span class="status" id="status-home">...</span></h3>
+            <audio controls preload="auto" id="audio-home">
+                <source src="./waldorf-home.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-card">
+            <h3>Observação <span class="status" id="status-observation">...</span></h3>
+            <audio controls preload="auto" id="audio-observation">
+                <source src="./waldorf-observation.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-card">
+            <h3>Cósmico <span class="status" id="status-cosmic">...</span></h3>
+            <audio controls preload="auto" id="audio-cosmic">
+                <source src="./waldorf-cosmic.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-card">
+            <h3>Setênios <span class="status" id="status-setenios">...</span></h3>
+            <audio controls preload="auto" id="audio-setenios">
+                <source src="./waldorf-setenios.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-card">
+            <h3>Temperamentos <span class="status" id="status-temperaments">...</span></h3>
+            <audio controls preload="auto" id="audio-temperaments">
+                <source src="./waldorf-temperaments.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-card">
+            <h3>Ritmo <span class="status" id="status-rhythm">...</span></h3>
+            <audio controls preload="auto" id="audio-rhythm">
+                <source src="./waldorf-rhythm.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-card">
+            <h3>Arte <span class="status" id="status-art">...</span></h3>
+            <audio controls preload="auto" id="audio-art">
+                <source src="./waldorf-art.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-card">
+            <h3>Prático <span class="status" id="status-practical">...</span></h3>
+            <audio controls preload="auto" id="audio-practical">
+                <source src="./waldorf-practical.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        
+        <div class="audio-card">
+            <h3>Ambiente <span class="status" id="status-ambient">...</span></h3>
+            <audio controls preload="auto" id="audio-ambient">
+                <source src="./waldorf-ambient.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+    
+    <button class="test-button" onclick="testAllAudio()">Testar Todos os Áudios</button>
+    
+    <script>
+        // Test each audio file
+        const audioFiles = [
+            'home', 'observation', 'cosmic', 'setenios', 
+            'temperaments', 'rhythm', 'art', 'practical', 'ambient'
+        ];
+        
+        audioFiles.forEach(file => {
+            const audio = document.getElementById(`audio-${file}`);
+            const status = document.getElementById(`status-${file}`);
+            
+            audio.addEventListener('canplay', () => {
+                status.textContent = 'OK';
+                status.className = 'status ok';
+            });
+            
+            audio.addEventListener('error', () => {
+                status.textContent = 'Erro';
+                status.className = 'status error';
+            });
+        });
+        
+        function testAllAudio() {
+            audioFiles.forEach(file => {
+                const audio = document.getElementById(`audio-${file}`);
+                audio.load();
+                audio.play().then(() => {
+                    setTimeout(() => audio.pause(), 1000);
+                }).catch(err => {
+                    console.error(`Error playing ${file}:`, err);
+                });
+            });
+        }
+        
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            audioFiles.forEach(file => {
+                const audio = document.getElementById(`audio-${file}`);
+                audio.load();
+            });
+        });
+    </script>
+</body>
+</html>

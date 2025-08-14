@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "course": "Cours",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Anthroposophie et Pédagogie Waldorf",
+      "subtitle": "Un voyage de découverte pour parents et éducateurs",
+      "description": "Découvrez les fondements de l'éducation qui nourrit le corps, l'âme et l'esprit, préparant les enfants à devenir des êtres humains libres, créatifs et responsables.",
+      "startButton": "Commencer le Voyage",
+      "learnMore": "En Savoir Plus"
+    },
+    "features": {
+      "title": "Ce que vous apprendrez",
+      "items": {
+        "anthroposophy": {
+          "title": "Fondements de l'Anthroposophie",
+          "description": "Comprendre la vision de l'être humain qui sous-tend la pédagogie Waldorf"
+        },
+        "development": {
+          "title": "Développement de l'Enfant",
+          "description": "Les cycles de sept ans et les phases du développement de l'enfant"
+        },
+        "practical": {
+          "title": "Pratiques Quotidiennes",
+          "description": "Comment créer un environnement Waldorf à la maison"
+        },
+        "community": {
+          "title": "Vie Communautaire",
+          "description": "L'importance de la communauté scolaire"
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à commencer?",
+      "description": "Embarquez dans ce voyage de connaissance et de transformation",
+      "button": "Accéder au Cours"
+    }
+  },
+  "course": {
+    "welcome": {
+      "title": "Bienvenue dans le Voyage Anthroposophique",
+      "poem": "L'être humain est un chercheur.\nCherchant soi-même,\nCherchant le monde,\nCherchant l'esprit.\nEt dans cette triple recherche,\nIl trouve le chemin de la vraie éducation.",
+      "author": "Rudolf Steiner",
+      "content": {
+        "greeting": "Chers parents,",
+        "paragraph1": "Ce cours a été créé avec amour et dévouement pour vous qui avez choisi la Pédagogie Waldorf pour vos enfants. Comme une graine qui germe dans un sol fertile, l'éducation Waldorf nourrit non seulement l'intellect, mais aussi le cœur et les mains de nos enfants.",
+        "paragraph2": "Ici, nous explorerons ensemble les fondements de l'Anthroposophie, la science spirituelle développée par Rudolf Steiner, qui sert de base philosophique à la pédagogie qui transforme des vies depuis plus de 100 ans."
+      },
+      "startButton": "Commencer le Cours",
+      "continueButton": "Continuer où vous vous êtes arrêté"
+    },
+    "navigation": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "backToChapters": "Retour aux Chapitres",
+      "complete": "Marquer comme Terminé"
+    },
+    "chapters": {
+      "title": "Chapitres",
+      "chapter1": {
+        "title": "L'Observation Goethéenne et les Archétypes",
+        "subtitle": "Apprendre à Voir avec le Cœur"
+      },
+      "chapter2": {
+        "title": "De l'Un au Multiple - L'Évolution Cosmique",
+        "subtitle": "La Danse des Nombres dans la Création"
+      },
+      "chapter3": {
+        "title": "Les Septennats - La Biographie Humaine",
+        "subtitle": "Les Cycles de Développement de l'Être Humain"
+      },
+      "chapter4": {
+        "title": "Les Quatre Corps de l'Être Humain",
+        "subtitle": "La Constitution Quadruple"
+      },
+      "chapter5": {
+        "title": "La Spiritualité dans l'Anthroposophie",
+        "subtitle": "Le Chemin de la Connaissance Spirituelle"
+      },
+      "chapter6": {
+        "title": "L'École comme Être Vivant",
+        "subtitle": "La Biographie de la Communauté Scolaire"
+      },
+      "chapter7": {
+        "title": "Bonnes Pratiques pour Parents Waldorf",
+        "subtitle": "Cultiver le Foyer Waldorf"
+      }
+    },
+    "exercises": {
+      "title": "Exercice",
+      "description": "Description de l'exercice"
+    },
+    "activities": {
+      "title": "Activités Pratiques"
+    },
+    "practices": {
+      "title": "Pratiques Recommandées"
+    },
+    "reflection": {
+      "title": "Réflexion Finale"
+    },
+    "resources": {
+      "title": "Ressources pour Approfondir",
+      "books": "Livres Essentiels",
+      "groups": "Groupes d'Étude",
+      "activities": "Activités Pratiques"
+    }
+  },
+  "progress": {
+    "title": "Votre Progression",
+    "completed": "Terminé",
+    "inProgress": "En Cours",
+    "notStarted": "Non Commencé",
+    "chapter": "Chapitre",
+    "of": "de"
+  },
+  "chat": {
+    "title": "Assistant du Cours",
+    "placeholder": "Tapez votre question...",
+    "send": "Envoyer",
+    "thinking": "En réflexion...",
+    "error": "Désolé, une erreur s'est produite. Veuillez réessayer.",
+    "welcome": "Bonjour! Je suis votre assistant pour le cours d'Anthroposophie et de Pédagogie Waldorf. Comment puis-je vous aider?"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "language": "Langue",
+    "selectLanguage": "Sélectionner la Langue"
+  }
+}

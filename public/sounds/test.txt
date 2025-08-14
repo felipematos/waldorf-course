@@ -1,0 +1,20 @@
+To add actual music to your Waldorf course:
+
+1. Download or create Waldorf-style music files (MP3 format)
+2. Name them according to the list in README.md
+3. Place them in this /public/sounds folder
+4. The music player will automatically use them
+
+The music player features:
+- Auto-plays when entering a page (if browser allows)
+- Remembers user's on/off preference
+- Smooth fade in/out transitions
+- Different music for each chapter
+- Visual feedback with animated music waves
+- Rotating icon when music is playing
+
+Current implementation:
+- Music toggle button appears in bottom-right corner
+- Click to turn music on/off
+- Preference saved in localStorage
+- Works across all pages

@@ -1,0 +1,115 @@
+@import './global.scss';
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+}
+
+// Chat toggle button
+.chat-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 120px;  // Moved left to avoid overlap with music button
+  padding: 15px 25px;
+  background: linear-gradient(135deg, $cor-violeta, $cor-azul-profundo);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba($cor-violeta, 0.4);
+  transition: all 0.3s ease;
+  z-index: 999;  // Adjusted z-index
+  font-family: inherit;
+  font-size: 1rem;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba($cor-violeta, 0.5);
+  }
+
+  .chat-icon {
+    font-size: 1.5rem;
+  }
+
+  .chat-text {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    right: 90px;  // Adjusted for mobile
+    padding: 12px;
+    
+    .chat-icon {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+// Page transitions
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+}
+
+// Loading animation
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+
+  .loader {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba($cor-violeta, 0.2);
+    border-top-color: $cor-violeta;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// Error message
+.error-message {
+  background: linear-gradient(135deg, rgba($cor-vermelho, 0.1), rgba($cor-laranja, 0.1));
+  border-left: 4px solid $cor-vermelho;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  color: darken($cor-vermelho, 10%);
+}
+
+// Success message
+.success-message {
+  background: linear-gradient(135deg, rgba($cor-folha, 0.1), rgba($cor-ceu, 0.1));
+  border-left: 4px solid $cor-folha;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  color: darken($cor-folha, 10%);
+}

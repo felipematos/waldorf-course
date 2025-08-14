@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "Home",
+    "course": "Cursus",
+    "about": "Over",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Antroposofie en Vrijeschoolpedagogie",
+      "subtitle": "Een ontdekkingsreis voor ouders en opvoeders",
+      "description": "Ontdek de fundamenten van onderwijs dat lichaam, ziel en geest voedt, en kinderen voorbereidt om vrije, creatieve en verantwoordelijke mensen te worden.",
+      "startButton": "Start Reis",
+      "learnMore": "Meer Informatie"
+    },
+    "features": {
+      "title": "Wat je zult leren",
+      "items": {
+        "anthroposophy": {
+          "title": "Grondslagen van de Antroposofie",
+          "description": "Begrijp de mensvisie die ten grondslag ligt aan de vrijeschoolpedagogie"
+        },
+        "development": {
+          "title": "Kinderontwikkeling",
+          "description": "De zevenjarige cycli en fasen van kinderontwikkeling"
+        },
+        "practical": {
+          "title": "Dagelijkse Praktijken",
+          "description": "Hoe creëer je een vrijeschool omgeving thuis"
+        },
+        "community": {
+          "title": "Gemeenschapsleven",
+          "description": "Het belang van de schoolgemeenschap"
+        }
+      }
+    },
+    "cta": {
+      "title": "Klaar om te beginnen?",
+      "description": "Begin aan deze reis van kennis en transformatie",
+      "button": "Toegang tot de Cursus"
+    }
+  },
+  "course": {
+    "welcome": {
+      "title": "Welkom bij de Antroposofische Reis",
+      "poem": "De mens is een zoeker.\nZoekend naar zichzelf,\nZoekend naar de wereld,\nZoekend naar de geest.\nEn in dit drievoudige zoeken,\nVindt hij de weg naar ware opvoeding.",
+      "author": "Rudolf Steiner",
+      "content": {
+        "greeting": "Lieve ouders,",
+        "paragraph1": "Deze cursus is met liefde en toewijding gemaakt voor jullie die de Vrijeschoolpedagogie voor jullie kinderen hebben gekozen. Als een zaad dat ontkiemt in vruchtbare grond, voedt het vrijeschoolonderwijs niet alleen het intellect, maar ook het hart en de handen van onze kinderen.",
+        "paragraph2": "Hier zullen we samen de fundamenten van de Antroposofie verkennen, de geesteswetenschap ontwikkeld door Rudolf Steiner, die dient als de filosofische basis voor de pedagogie die al meer dan 100 jaar levens transformeert."
+      },
+      "startButton": "Start de Cursus",
+      "continueButton": "Ga verder waar je gebleven was"
+    },
+    "navigation": {
+      "previous": "Vorige",
+      "next": "Volgende",
+      "backToChapters": "Terug naar Hoofdstukken",
+      "complete": "Markeer als Voltooid"
+    },
+    "chapters": {
+      "title": "Hoofdstukken",
+      "chapter1": {
+        "title": "Goetheanistische Observatie en Archetypen",
+        "subtitle": "Leren Zien met het Hart"
+      },
+      "chapter2": {
+        "title": "Van Één naar Velen - Kosmische Evolutie",
+        "subtitle": "De Dans van Getallen in de Schepping"
+      },
+      "chapter3": {
+        "title": "De Zevenjaarscycli - Menselijke Biografie",
+        "subtitle": "De Ontwikkelingscycli van de Mens"
+      },
+      "chapter4": {
+        "title": "De Vier Lichamen van de Mens",
+        "subtitle": "De Viervoudige Constitutie"
+      },
+      "chapter5": {
+        "title": "Spiritualiteit in de Antroposofie",
+        "subtitle": "De Weg van Spirituele Kennis"
+      },
+      "chapter6": {
+        "title": "De School als Levend Wezen",
+        "subtitle": "De Biografie van de Schoolgemeenschap"
+      },
+      "chapter7": {
+        "title": "Beste Praktijken voor Vrijeschool Ouders",
+        "subtitle": "Het Cultiveren van het Vrijeschool Thuis"
+      }
+    },
+    "exercises": {
+      "title": "Oefening",
+      "description": "Oefening beschrijving"
+    },
+    "activities": {
+      "title": "Praktische Activiteiten"
+    },
+    "practices": {
+      "title": "Aanbevolen Praktijken"
+    },
+    "reflection": {
+      "title": "Eindreflectie"
+    },
+    "resources": {
+      "title": "Bronnen voor Verdieping",
+      "books": "Essentiële Boeken",
+      "groups": "Studiegroepen",
+      "activities": "Praktische Activiteiten"
+    }
+  },
+  "progress": {
+    "title": "Jouw Voortgang",
+    "completed": "Voltooid",
+    "inProgress": "In Uitvoering",
+    "notStarted": "Niet Gestart",
+    "chapter": "Hoofdstuk",
+    "of": "van"
+  },
+  "chat": {
+    "title": "Cursus Assistent",
+    "placeholder": "Typ je vraag...",
+    "send": "Verzenden",
+    "thinking": "Aan het denken...",
+    "error": "Sorry, er is een fout opgetreden. Probeer het opnieuw.",
+    "welcome": "Hallo! Ik ben je assistent voor de cursus Antroposofie en Vrijeschoolpedagogie. Hoe kan ik je helpen?"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Fout",
+    "success": "Succes",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "confirm": "Bevestigen",
+    "close": "Sluiten",
+    "language": "Taal",
+    "selectLanguage": "Selecteer Taal"
+  }
+}

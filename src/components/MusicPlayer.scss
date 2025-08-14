@@ -1,0 +1,92 @@
+@import '../styles/global.scss';
+
+.music-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 998;  // Higher than progress tracker, lower than chat
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  
+  &.on {
+    background: linear-gradient(135deg, rgba($cor-violeta, 0.9), rgba($cor-ceu, 0.9));
+    color: white;
+    
+    &:hover {
+      box-shadow: 0 6px 30px rgba($cor-violeta, 0.4);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.off {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba($cor-violeta, 0.2);
+    color: $cor-violeta;
+    
+    &:hover {
+      background: rgba($cor-violeta, 0.05);
+      border-color: rgba($cor-violeta, 0.4);
+    }
+  }
+  
+  svg {
+    position: relative;
+    z-index: 2;
+  }
+  
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    bottom: 90px;  // Move up to avoid navigation overlap
+  }
+}
+
+.music-waves {
+  position: absolute;
+  display: flex;
+  gap: 3px;
+  pointer-events: none;
+  
+  span {
+    width: 3px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+    transform-origin: bottom;
+  }
+}
+
+// Pulse animation for first load
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.music-toggle {
+  animation: pulse 2s ease-in-out 3;
+}

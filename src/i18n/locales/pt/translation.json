@@ -1,0 +1,140 @@
+{
+  "navigation": {
+    "home": "Início",
+    "course": "Curso",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "home": {
+    "hero": {
+      "title": "Antroposofia e Pedagogia Waldorf",
+      "subtitle": "Uma jornada de descoberta para pais e educadores",
+      "description": "Descubra os fundamentos da educação que nutre corpo, alma e espírito, preparando crianças para se tornarem seres humanos livres, criativos e responsáveis.",
+      "startButton": "Iniciar Jornada",
+      "learnMore": "Saiba Mais"
+    },
+    "features": {
+      "title": "O que você vai aprender",
+      "items": {
+        "anthroposophy": {
+          "title": "Fundamentos da Antroposofia",
+          "description": "Compreenda a visão de ser humano que embasa a pedagogia Waldorf"
+        },
+        "development": {
+          "title": "Desenvolvimento Infantil",
+          "description": "Os setênios e as fases do desenvolvimento da criança"
+        },
+        "practical": {
+          "title": "Práticas Diárias",
+          "description": "Como criar um ambiente Waldorf em casa"
+        },
+        "community": {
+          "title": "Vida em Comunidade",
+          "description": "A importância da comunidade escolar"
+        }
+      }
+    },
+    "cta": {
+      "title": "Pronto para começar?",
+      "description": "Embarque nesta jornada de conhecimento e transformação",
+      "button": "Acessar o Curso"
+    }
+  },
+  "course": {
+    "welcome": {
+      "title": "Bem-vindo à Jornada Antroposófica",
+      "poem": "O homem é um ser que busca.\nBusca a si mesmo,\nBusca o mundo,\nBusca o espírito.\nE nesta busca tríplice,\nEncontra o caminho da educação verdadeira.",
+      "author": "Rudolf Steiner",
+      "content": {
+        "greeting": "Queridos pais e mães,",
+        "paragraph1": "Este curso foi criado com amor e dedicação para vocês que escolheram a Pedagogia Waldorf para seus filhos. Como uma semente que germina na terra fértil, a educação Waldorf nutre não apenas o intelecto, mas também o coração e as mãos de nossas crianças.",
+        "paragraph2": "Aqui, exploraremos juntos os fundamentos da Antroposofia, a ciência espiritual desenvolvida por Rudolf Steiner, que serve como base filosófica para a pedagogia que transforma vidas há mais de 100 anos."
+      },
+      "startButton": "Começar o Curso",
+      "continueButton": "Continuar de onde parou"
+    },
+    "navigation": {
+      "previous": "Anterior",
+      "next": "Próximo",
+      "backToChapters": "Voltar aos Capítulos",
+      "complete": "Marcar como Concluído"
+    },
+    "chapters": {
+      "title": "Capítulos",
+      "chapter1": {
+        "title": "A Observação Goetheanística e os Arquétipos",
+        "subtitle": "Aprendendo a Ver com o Coração"
+      },
+      "chapter2": {
+        "title": "Do Um ao Muitos - A Evolução Cósmica",
+        "subtitle": "A Dança dos Números na Criação"
+      },
+      "chapter3": {
+        "title": "Os Setênios - A Biografia Humana",
+        "subtitle": "Os Ciclos de Desenvolvimento do Ser Humano"
+      },
+      "chapter4": {
+        "title": "Os Quatro Corpos do Ser Humano",
+        "subtitle": "A Constituição Quádrupla"
+      },
+      "chapter5": {
+        "title": "A Espiritualidade na Antroposofia",
+        "subtitle": "O Caminho do Conhecimento Espiritual"
+      },
+      "chapter6": {
+        "title": "A Escola Como Ser Vivo",
+        "subtitle": "A Biografia da Comunidade Escolar"
+      },
+      "chapter7": {
+        "title": "Boas Práticas para Pais Waldorf",
+        "subtitle": "Cultivando o Lar Waldorf"
+      }
+    },
+    "exercises": {
+      "title": "Exercício",
+      "description": "Descrição do exercício"
+    },
+    "activities": {
+      "title": "Atividades Práticas"
+    },
+    "practices": {
+      "title": "Práticas Recomendadas"
+    },
+    "reflection": {
+      "title": "Reflexão Final"
+    },
+    "resources": {
+      "title": "Recursos para Aprofundamento",
+      "books": "Livros Fundamentais",
+      "groups": "Grupos de Estudo",
+      "activities": "Atividades Práticas"
+    }
+  },
+  "progress": {
+    "title": "Seu Progresso",
+    "completed": "Concluído",
+    "inProgress": "Em Andamento",
+    "notStarted": "Não Iniciado",
+    "chapter": "Capítulo",
+    "of": "de"
+  },
+  "chat": {
+    "title": "Assistente do Curso",
+    "placeholder": "Digite sua pergunta...",
+    "send": "Enviar",
+    "thinking": "Pensando...",
+    "error": "Desculpe, ocorreu um erro. Tente novamente.",
+    "welcome": "Olá! Sou seu assistente para o curso de Antroposofia e Pedagogia Waldorf. Como posso ajudá-lo?"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro",
+    "success": "Sucesso",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Fechar",
+    "language": "Idioma",
+    "selectLanguage": "Selecionar Idioma"
+  }
+}
